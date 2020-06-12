@@ -5,6 +5,9 @@ import {
     POST_START,
     POST_SUCCESS,
     POST_FAILURE,
+    PUT_START,
+    PUT_SUCCESS,
+    PUT_FAILURE,
   } from "../actions/index";
   
   //1.create initial state
@@ -52,7 +55,27 @@ import {
           isFetching: false,
           error: "",
         };
-      case POST_FAILURE:
+      case PUT_FAILURE:
+        return {
+          ...state,
+          isFetching: false,
+          error: action.payload,
+        };
+        case PUT_START:
+        return {
+          ...state,
+          smurfs: [...state.smurfs],
+          isFetching: true,
+          error: "",
+        };
+      case PUT_SUCCESS:
+        return {
+          ...state,
+          smurfs: action.payload,
+          isFetching: false,
+          error: "",
+        };
+      case PUT_FAILURE:
         return {
           ...state,
           isFetching: false,

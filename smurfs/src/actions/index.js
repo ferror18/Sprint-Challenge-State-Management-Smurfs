@@ -33,3 +33,20 @@ export const postSmurf = (newSmurf) => (dispatch) => {
       {dispatch({ type: POST_FAILURE, payload: error.response })
     })
 };
+
+export const PUT_START = "PUT_START";
+export const PUT_SUCCESS = "PUT_SUCCESS";
+export const PUT_FAILURE = "PUT_FAILURE";
+export const putSmurf = (id, newSmurf) => (dispatch) => {
+  dispatch({ type: PUT_START });
+
+  axios
+    .put(`http://localhost:3333/smurfs/${id}`, newSmurf)
+    .then((response) => {
+      console.log(response.data , '<-- GET RESPONSE---->');
+      dispatch({ type: PUT_SUCCESS, payload: response.data });
+    })
+    .catch((error) =>
+      dispatch({ type: PUT_FAILURE, payload: error.response })
+    );
+};
