@@ -22,11 +22,28 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What problem does the context API help solve?
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
-- [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+- [ ] 1. - What problem does the context API help solve?
+
+the overly verbose passing of state trough props in  large applications
+
+- [ ] 2. - In your own words, describe actions, reducers and the store and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+	actions - are triggered usually by events in the app, they are payload of data or where we get our data, be it a server request or grabbing user input.
+	reducers - This are functions that reduce actions (payloads of data) to state using specific cases
+	store - where state is saved and accesed from, state shold only come from the store never from action or reducers and that why its called SSOT
+
+- [ ] 3 . - What is the difference between Application state and Component state? When would be a good time to use one over the other?
+	
+	Diferemce is where they would be used, if the state is used in on component and its children alone then its better to not put it in to global state but
+	if you needed it in multiple places then its better to put it as global state.
+
+- [ ] 4 . - Describe redux-thunk, what does it allow us to do? How does it change our action-creators?
+
+	Allowus to return function from our action specially helpful when dealing whit async
+
+- [ ]5. - What is your favorite state management system you've learned and this sprint? Please explain why!
+
+	Dont have a favorite perse im more proficient with hooks but at the end of the day my favorite would be the one that fits the use case batter for the project.
 
 ## Project Set Up
 
